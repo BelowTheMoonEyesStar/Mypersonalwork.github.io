@@ -1,0 +1,139 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #181417;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.tabs {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  perspective: 1000px;
+}
+.tabs .tab {
+  position: absolute;
+  animation: myTab 1.2s ease;
+}
+.tabs .tab .nav {
+  width: 125px;
+  height: 50px;
+  background-color: #9f946f;
+  position: absolute;
+  top: 0;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.tabs .tab .nav .bar {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #564e58;
+  margin: 2px;
+}
+.tabs .tab .nav:hover {
+  background-color: #bfb48f;
+}
+.tabs .tab .nav.active {
+  background-color: #f2efe9;
+}
+.tabs .tab .nav.active .bar {
+  background-color: #bfb48f;
+}
+.tabs .tab .content {
+  width: 304px;
+  height: 178px;
+  position: absolute;
+  background-color: #f2efe9;
+  border-radius: 5px 5px 15px 15px;
+  box-shadow: 0px 1px 5px 0px black;
+  padding: 36px 48px;
+  top: 50px;
+  transition: all 1s;
+}
+.tabs .tab .content .skeleton {
+  height: 24px;
+  background-color: #bfb48f;
+  margin-bottom: 15px;
+}
+.tabs .tab-frist .nav {
+  left: 5px;
+}
+.tabs .tab-frist .content .skeleton:nth-child(1) {
+  width: 215px;
+}
+.tabs .tab-frist .content .skeleton:nth-child(2) {
+  width: 235px;
+}
+.tabs .tab-frist .content .skeleton:nth-child(3) {
+  width: 180px;
+}
+.tabs .tab-frist .content .skeleton:nth-child(4) {
+  width: 209px;
+}
+.tabs .tab-mide .nav {
+  left: 138px;
+}
+.tabs .tab-mide .content .skeleton:nth-child(1) {
+  width: 230px;
+}
+.tabs .tab-mide .content .skeleton:nth-child(2) {
+  width: 220px;
+}
+.tabs .tab-mide .content .skeleton:nth-child(3) {
+  width: 235px;
+}
+.tabs .tab-mide .content .skeleton:nth-child(4) {
+  width: 245px;
+}
+.tabs .tab-last .nav {
+  left: 270px;
+}
+.tabs .tab-last .content .skeleton:nth-child(1) {
+  width: 240px;
+}
+.tabs .tab-last .content .skeleton:nth-child(2) {
+  width: 220px;
+}
+.tabs .tab-last .content .skeleton:nth-child(3) {
+  width: 230px;
+}
+.tabs .tab-last .content .skeleton:nth-child(4) {
+  width: 260px;
+}
+.tabs .current {
+  z-index: 1;
+  animation: none;
+}
+.tabs .prev {
+  z-index: -1;
+}
+@keyframes myTab {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    z-index: 2;
+  }
+  50% {
+    transform: translate3d(450px, 0, 100px) rotate3d(0, 1, 0, -80deg);
+  }
+  51% {
+    z-index: -1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media screen and (max-width: 400px) {
+  .tabs .tabs {
+    min-width: 100%;
+  }
+}
+/*# sourceMappingURL=./style.css.map */

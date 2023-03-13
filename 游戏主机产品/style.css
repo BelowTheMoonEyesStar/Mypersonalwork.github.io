@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+.btn {
+  color: white;
+  background-color: #599ee9;
+  font-size: 18px;
+  width: 150px;
+  height: 50px;
+  font-weight: bold;
+  line-height: 35px;
+  border-radius: 15px;
+  text-align: center;
+}
+.navbar {
+  padding: 20px;
+  font-weight: 500;
+  border-top: 45px solid #333a44;
+  box-shadow: 0 0 10px 5px #c4c4c4;
+}
+.navbar .navbar-collapse {
+  justify-content: flex-end;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item {
+  margin-left: 5px;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item a {
+  color: #24292f;
+  font-size: 18px;
+}
+.carousel {
+  background-color: #333a44;
+  padding-top: 90px;
+  padding-bottom: 180px;
+}
+.carousel .carousel-inner .carousel-item .carousel-text {
+  margin-top: 20%;
+}
+.carousel .carousel-inner .carousel-item .carousel-text h1 {
+  font-size: 45px;
+  font-weight: bold;
+}
+.carousel .carousel-inner .carousel-item .carousel-text .h1-1 {
+  color: white;
+}
+.carousel .carousel-inner .carousel-item .carousel-text .h1-2 {
+  color: #599ee9;
+  font-size: 50px;
+}
+.carousel .carousel-inner .carousel-item .carousel-text p {
+  color: white;
+}
+.carousel .carousel-inner .carousel-item .carousel-text .btn {
+  margin-top: 20px;
+}
+.carousel .carousel-inner .carousel-item .carousel-text .btn:hover {
+  color: #24292f;
+}
+.carousel .carousel-inner .carousel-item img {
+  margin-top: 20%;
+}
+.carousel .btn1,
+.carousel .btn2 {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .carousel .btn1,
+  .carousel .btn2 {
+    display: block;
+    background-color: #599ee9;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 65px;
+    margin-right: 20px;
+    outline: none;
+    display: inline-block;
+  }
+}
+.about {
+  padding: 60px 0;
+  background-color: #f2f7fd;
+}
+.about .about-text {
+  text-align: right;
+}
+.about .about-text h1 {
+  font-weight: bold;
+  padding: 20px 0;
+}
+.about .about-text p {
+  padding: 10px 0;
+}
+.about .about-text .btn {
+  margin: 60px 0;
+}
+.products {
+  padding: 90px 0;
+  text-align: center;
+}
+.products p {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.products .title {
+  font-size: 44px;
+  font-weight: bold;
+}
+.products span {
+  color: #599ee9;
+}
+.products .price {
+  font-size: 25px;
+  font-weight: bold;
+}
+.products .btn {
+  margin: 20px;
+}
+.videogame {
+  background: url('http://demo.mobanwang.com/mb/lo202204/202204097/html/images/video-bg.png') no-repeat;
+  background-position: 50% 50%;
+  background-color: #2c333d;
+  padding-top: 90px;
+}
+.videogame .videogame-text {
+  text-align: left;
+}
+.videogame .videogame-text h1 {
+  font-weight: bold;
+  font-size: 40px;
+}
+.videogame .videogame-text .h1-1 {
+  color: #599ee9;
+}
+.videogame .videogame-text .h1-2 {
+  color: white;
+}
+.videogame .videogame-text p {
+  color: white;
+  margin: 20px 0;
+}
+.videogame .videogame-text .btn {
+  margin: 20px 0 ;
+}
+.testimonial {
+  text-align: center;
+  padding-top: 90px;
+}
+.testimonial h1 {
+  font-weight: bold;
+}
+.testimonial .center {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 20px;
+}
+.testimonial .center p {
+  padding: 20px 0;
+}
+.testimonial .center .main {
+  width: 250px;
+  height: 117px;
+  background-color: #599ee9;
+}
+.testimonial .center .main .left {
+  float: left;
+}
+.testimonial .center .main .right {
+  float: left;
+  padding: 15px;
+  text-align: center;
+}
+.testimonial .center .main .right h1 {
+  font-size: 18px;
+  padding: 5px;
+  color: white;
+}
+.testimonial .center .main .right p {
+  padding: 10px;
+}
+.testimonial .btn {
+  margin: 30px;
+}
+.email {
+  background-color: #f2f7fd;
+}
+.email .row {
+  padding: 90px 0;
+}
+.email .content div {
+  border-bottom: 1px solid;
+  padding: 10px 0;
+  margin-top: 40px;
+}
+.email .content div input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+.email .btn {
+  background-color: red;
+  margin-top: 50px;
+}
+.footer {
+  background-color: #292828;
+}
+.footer .row:nth-child(1) {
+  padding: 20px 0;
+  border-bottom: 1px solid white;
+}
+.footer .bottom-text {
+  padding-right: 10px;
+}
+.footer .bottom-text h2 {
+  color: white;
+}
+.footer .bottom-text p {
+  color: white;
+}
+.footer .bottom-text ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .bottom-text ul li {
+  color: white;
+  cursor: pointer;
+}
+.footer .bottom-text ul li:hover {
+  color: #599ee9;
+}
+.footer .bottom-text input {
+  border: none;
+  outline: none;
+  padding: 12px;
+}
+.footer .btn {
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 0;
+  margin-top: 7px;
+}
+.footer .bottom-img {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.footer .bottom-img li {
+  padding: 15px;
+}
+/*# sourceMappingURL=./style.css.map */

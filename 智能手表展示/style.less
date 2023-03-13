@@ -1,0 +1,436 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+// nav导航栏
+.nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 999;
+    transition: all 1s;
+
+    .navbar {
+        .navbar-collapse {
+            justify-content: flex-end;
+            font-size: 14px;
+            margin-right: 25px;
+
+            .navbar-nav {
+                .nav-item {
+                    &>a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// banner-area
+.banner-area {
+    background: url('http://demo.mobanwang.com/mb/lo201904/201904113/html/img/header-bg.png') center;
+    background-size: cover;
+    display: flex;
+
+    .row {
+        text-align: center;
+        align-items: center;
+    }
+
+    .banner-text {
+        margin-top: -260px;
+
+        h5,
+        h1 {
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 72px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #ffffff;
+            padding: 8px 40px;
+            border-radius: 50px;
+            border: 1px solid transparent;
+            font-weight: bold;
+
+            &:hover {
+                border: 1px solid white;
+                background-color: transparent;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+// gap
+.gap {
+    padding: 120px 0;
+
+    .gap-text {
+        h6 {
+            color: #548feb;
+            font-size: 13px;
+        }
+
+        h1 {
+            width: 80%;
+            font-weight: bold;
+        }
+
+        p {
+            padding: 5px;
+        }
+
+        .p2 {
+            color: #ccc;
+        }
+
+        .btn {
+            border: 1px solid transparent;
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            padding: 8px 40px;
+
+            &:hover {
+                border: 1px solid black;
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+}
+
+// course
+.course {
+    padding: 120px 0;
+    background-color: #f9f9ff;
+
+    .title {
+        text-align: center;
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .course-text {
+        padding: 5px;
+        margin: 10px;
+
+        .ioc {
+            width: 30px;
+            height: 30px;
+            background-color: #548feb;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        h4 {
+            margin: 15px 0;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        p {
+            color: #ccc;
+        }
+    }
+
+    .course-img {
+        text-align: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+// about
+.about {
+    padding: 100px 0;
+
+    .row {
+        display: flex;
+        align-items: center;
+        left: 0;
+        // position: absolute;
+        // margin: 0;
+    }
+
+    .col-lg-6 {
+        padding: 0;
+    }
+
+    .about-img {
+        margin-left: 0;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .about-text {
+        padding: 50px 100px;
+
+        h1 {
+            width: 350px;
+            font-weight: bold;
+            font-size: 35px;
+        }
+
+        span {
+            width: 85%;
+            color: #777777;
+            font-weight: bold;
+        }
+
+        p {
+            width: 85%;
+            color: #ccc;
+        }
+
+        .btn {
+            color: white;
+            padding: 5px 40px;
+            background-color: #548feb;
+            border: 1px solid transparent;
+            border-radius: 25px;
+            transition: all 0.3s;
+
+            &:hover {
+                color: #548feb;
+                border: 1px solid #548feb;
+                background-color: white;
+            }
+        }
+    }
+}
+
+// service
+.service {
+    margin-bottom: 120px;
+
+    .title {
+        text-align: center;
+        padding: 50px 0;
+
+        p {
+            color: #ccc;
+        }
+    }
+
+    .service-text {
+        padding: 20px;
+        background-color: #f9f9ff;
+        align-items: center;
+        margin: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        .ioc {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background-color: #548feb;
+            border-radius: 50%;
+        }
+
+        p {
+            color: #777777;
+        }
+
+        &:hover {
+            h4 {
+                color: #548feb;
+            }
+
+            box-shadow: 0px 15px 20px 10px #d9e3fb;
+        }
+    }
+}
+
+// unique
+.unique {
+    background-color: #04091e;
+    padding: 120px 0;
+
+    .title {
+        text-align: center;
+
+        h1 {
+            color: white;
+        }
+
+        p {
+            color: #527766;
+        }
+    }
+
+    .unique-content {
+        margin-top: 50px;
+        background-color: white;
+        border-radius: 10px;
+        text-align: center;
+
+        .unique-img {
+            padding: 45px 0;
+        }
+
+        .unique-text {
+            padding: 20px 0;
+            background-color: #f9f9ff;
+
+            h4 {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            h6 {
+                color: #548feb;
+                font-weight: bold;
+                font-size: 18px;
+                margin: 10px 0;
+            }
+
+            .btn {
+                padding: 5px 40px;
+                background-color: black;
+                color: white;
+                border-radius: 25px;
+                font-weight: bold;
+            }
+        }
+
+        &:hover .btn {
+            background-color: #3aaef2;
+        }
+    }
+}
+
+// Some
+.Some {
+    margin: 120px 0;
+
+    .title {
+        margin: 30px 0;
+        text-align: center;
+
+        p {
+            color: #ccc;
+        }
+    }
+
+    .service-text {
+        padding: 20px;
+        background-color: #f9f9ff;
+        align-items: center;
+        margin: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        .ioc {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background-color: #548feb;
+            border-radius: 50%;
+        }
+
+        p {
+            color: #777777;
+        }
+
+        &:hover {
+            h4 {
+                color: #548feb;
+            }
+
+            box-shadow: 0px 15px 20px 10px #d9e3fb;
+        }
+    }
+}
+
+// Frequently
+.Frequently {
+    padding: 120px 0;
+    background: url('http://demo.mobanwang.com/mb/lo201904/201904113/html/img/faq-bg.jpg') no-repeat;
+    background-position: 50% 50%;
+    user-select: none;
+    .title {
+        text-align: center;
+        margin-bottom: 80px;
+
+        p {
+            color: #527766;
+        }
+    }
+
+    .card {
+        margin: 10px 0;
+        font-weight: bold;
+        border: none;
+        background-color: transparent;
+
+        cursor: pointer;
+        .card-btn {
+            padding: 15px 15px;
+            color: white;
+            background-color: #3aaef2;
+        }
+
+        .card-text {
+            padding: 15px;
+            color: #7f8584;
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+// bottom
+.bottom{
+    padding: 120px 0;
+    background-color: #04091e;
+    .bottom-text{
+        margin: 10px;
+        h1{
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        p{
+            color: #6c6b71;
+            padding: 10px 0;
+            span{
+                color: #0629c0;
+            }
+        }
+        input{
+            width: 70%;
+            background-color: #191919;
+            padding: 5px 10px;
+            color:#6c6b71 ;
+            outline-style: none;
+            border: 2px solid #0629c0;
+        }
+        .ioc{
+            .col-sm-3{
+                max-width: 14%;
+            }
+        }
+    }
+}

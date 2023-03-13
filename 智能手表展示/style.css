@@ -1,0 +1,345 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 999;
+  transition: all 1s;
+}
+.nav .navbar .navbar-collapse {
+  justify-content: flex-end;
+  font-size: 14px;
+  margin-right: 25px;
+}
+.nav .navbar .navbar-collapse .navbar-nav .nav-item > a {
+  color: white;
+}
+.banner-area {
+  background: url('http://demo.mobanwang.com/mb/lo201904/201904113/html/img/header-bg.png') center;
+  background-size: cover;
+  display: flex;
+}
+.banner-area .row {
+  text-align: center;
+  align-items: center;
+}
+.banner-area .banner-text {
+  margin-top: -260px;
+}
+.banner-area .banner-text h5,
+.banner-area .banner-text h1 {
+  color: white;
+  text-align: center;
+}
+.banner-area .banner-text h1 {
+  font-size: 72px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.banner-area .banner-text .btn {
+  background-color: #ffffff;
+  padding: 8px 40px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  font-weight: bold;
+}
+.banner-area .banner-text .btn:hover {
+  border: 1px solid white;
+  background-color: transparent;
+  color: #ffffff;
+}
+.gap {
+  padding: 120px 0;
+}
+.gap .gap-text h6 {
+  color: #548feb;
+  font-size: 13px;
+}
+.gap .gap-text h1 {
+  width: 80%;
+  font-weight: bold;
+}
+.gap .gap-text p {
+  padding: 5px;
+}
+.gap .gap-text .p2 {
+  color: #ccc;
+}
+.gap .gap-text .btn {
+  border: 1px solid transparent;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 8px 40px;
+}
+.gap .gap-text .btn:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+.course {
+  padding: 120px 0;
+  background-color: #f9f9ff;
+}
+.course .title {
+  text-align: center;
+  padding: 15px;
+  margin: 15px;
+}
+.course .course-text {
+  padding: 5px;
+  margin: 10px;
+}
+.course .course-text .ioc {
+  width: 30px;
+  height: 30px;
+  background-color: #548feb;
+  margin: 10px;
+  border-radius: 50%;
+}
+.course .course-text h4 {
+  margin: 15px 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+.course .course-text p {
+  color: #ccc;
+}
+.course .course-img {
+  text-align: center;
+}
+.course .course-img img {
+  max-width: 100%;
+  height: auto;
+}
+.about {
+  padding: 100px 0;
+}
+.about .row {
+  display: flex;
+  align-items: center;
+  left: 0;
+}
+.about .col-lg-6 {
+  padding: 0;
+}
+.about .about-img {
+  margin-left: 0;
+}
+.about .about-img img {
+  max-width: 100%;
+  height: auto;
+}
+.about .about-text {
+  padding: 50px 100px;
+}
+.about .about-text h1 {
+  width: 350px;
+  font-weight: bold;
+  font-size: 35px;
+}
+.about .about-text span {
+  width: 85%;
+  color: #777777;
+  font-weight: bold;
+}
+.about .about-text p {
+  width: 85%;
+  color: #ccc;
+}
+.about .about-text .btn {
+  color: white;
+  padding: 5px 40px;
+  background-color: #548feb;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  transition: all 0.3s;
+}
+.about .about-text .btn:hover {
+  color: #548feb;
+  border: 1px solid #548feb;
+  background-color: white;
+}
+.service {
+  margin-bottom: 120px;
+}
+.service .title {
+  text-align: center;
+  padding: 50px 0;
+}
+.service .title p {
+  color: #ccc;
+}
+.service .service-text {
+  padding: 20px;
+  background-color: #f9f9ff;
+  align-items: center;
+  margin: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.service .service-text .ioc {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-color: #548feb;
+  border-radius: 50%;
+}
+.service .service-text p {
+  color: #777777;
+}
+.service .service-text:hover {
+  box-shadow: 0px 15px 20px 10px #d9e3fb;
+}
+.service .service-text:hover h4 {
+  color: #548feb;
+}
+.unique {
+  background-color: #04091e;
+  padding: 120px 0;
+}
+.unique .title {
+  text-align: center;
+}
+.unique .title h1 {
+  color: white;
+}
+.unique .title p {
+  color: #527766;
+}
+.unique .unique-content {
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+.unique .unique-content .unique-img {
+  padding: 45px 0;
+}
+.unique .unique-content .unique-text {
+  padding: 20px 0;
+  background-color: #f9f9ff;
+}
+.unique .unique-content .unique-text h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.unique .unique-content .unique-text h6 {
+  color: #548feb;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
+}
+.unique .unique-content .unique-text .btn {
+  padding: 5px 40px;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+}
+.unique .unique-content:hover .btn {
+  background-color: #3aaef2;
+}
+.Some {
+  margin: 120px 0;
+}
+.Some .title {
+  margin: 30px 0;
+  text-align: center;
+}
+.Some .title p {
+  color: #ccc;
+}
+.Some .service-text {
+  padding: 20px;
+  background-color: #f9f9ff;
+  align-items: center;
+  margin: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.Some .service-text .ioc {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-color: #548feb;
+  border-radius: 50%;
+}
+.Some .service-text p {
+  color: #777777;
+}
+.Some .service-text:hover {
+  box-shadow: 0px 15px 20px 10px #d9e3fb;
+}
+.Some .service-text:hover h4 {
+  color: #548feb;
+}
+.Frequently {
+  padding: 120px 0;
+  background: url('http://demo.mobanwang.com/mb/lo201904/201904113/html/img/faq-bg.jpg') no-repeat;
+  background-position: 50% 50%;
+  user-select: none;
+}
+.Frequently .title {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.Frequently .title p {
+  color: #527766;
+}
+.Frequently .card {
+  margin: 10px 0;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.Frequently .card .card-btn {
+  padding: 15px 15px;
+  color: white;
+  background-color: #3aaef2;
+}
+.Frequently .card .card-text {
+  padding: 15px;
+  color: #7f8584;
+  display: none;
+}
+.Frequently .card .card-text.active {
+  display: block;
+}
+.bottom {
+  padding: 120px 0;
+  background-color: #04091e;
+}
+.bottom .bottom-text {
+  margin: 10px;
+}
+.bottom .bottom-text h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.bottom .bottom-text p {
+  color: #6c6b71;
+  padding: 10px 0;
+}
+.bottom .bottom-text p span {
+  color: #0629c0;
+}
+.bottom .bottom-text input {
+  width: 70%;
+  background-color: #191919;
+  padding: 5px 10px;
+  color: #6c6b71;
+  outline-style: none;
+  border: 2px solid #0629c0;
+}
+.bottom .bottom-text .ioc .col-sm-3 {
+  max-width: 14%;
+}
+/*# sourceMappingURL=./style.css.map */

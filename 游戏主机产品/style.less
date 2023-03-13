@@ -1,0 +1,287 @@
+body {
+    margin: 0;
+    padding: 0;
+    // background-color: #333a44;
+    user-select: none;
+}
+.btn{
+    color: white;
+    background-color: #599ee9;
+    font-size: 18px;
+    width: 150px;
+    height: 50px;
+    font-weight: bold;
+    line-height: 35px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+// 导航栏
+.navbar {
+    padding: 20px;
+    font-weight: 500;
+    border-top: 45px solid #333a44;
+    box-shadow: 0 0 10px 5px #c4c4c4;
+    .navbar-collapse {
+        justify-content: flex-end;
+        .navbar-nav {
+            .nav-item {
+                margin-left: 5px;
+                a {
+                    color: #24292f;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+// 顶部轮播图
+.carousel {
+    background-color: #333a44;
+    padding-top: 90px;
+    padding-bottom: 180px;
+    .carousel-inner {
+        .carousel-item {
+            .carousel-text {
+                margin-top: 20%;
+                h1 {
+                    font-size: 45px;
+                    font-weight: bold;
+                }
+
+                .h1-1 {
+                    color: white;
+                }
+
+                .h1-2 {
+                    color: #599ee9;
+                    font-size: 50px;
+                }
+                p {
+                    color: white;
+                }
+                .btn{
+                    margin-top: 20px;
+                    &:hover{
+                        color: #24292f;
+                    }
+                }
+            }
+            img{
+                margin-top: 20%;
+            }
+        }
+    }
+    .btn1,.btn2{
+        display: none;
+    }
+    @media screen and (min-width: 1200px)   {
+        .btn1,.btn2{
+            display: block;
+            background-color: #599ee9;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 65px;
+            margin-right: 20px;
+            outline: none;
+            display: inline-block;
+        }
+     }
+
+}
+
+// about
+.about{
+    padding: 60px 0;
+    background-color: #f2f7fd;
+    .about-text{
+        text-align: right;
+        h1{
+            font-weight: bold;
+            padding: 20px 0;
+        }
+        p{
+            padding: 10px 0;
+        }
+        .btn{
+            margin: 60px 0;
+        }
+    }
+}
+
+// products
+.products{
+    padding: 90px 0;
+    text-align: center;
+    p{
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .title{
+        font-size: 44px;
+        font-weight: bold;
+    }
+    span{
+        color: #599ee9;
+    }
+    .price{
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .btn{
+        margin: 20px;
+    }
+}
+
+// videogame
+.videogame{
+    background: url('http://demo.mobanwang.com/mb/lo202204/202204097/html/images/video-bg.png') no-repeat;
+    background-position: 50% 50%;
+    background-color: #2c333d;
+    padding-top: 90px;
+    .videogame-text{
+        text-align: left;
+        h1{
+            font-weight: bold;
+            font-size: 40px;
+        }
+        .h1-1{
+            color: #599ee9;
+        }
+        .h1-2{
+            color: white;
+        }
+        p{
+            color: white;
+            margin: 20px 0;
+        }
+        .btn{
+            margin:20px 0 ;
+        }
+    }
+}
+
+// TESTIMONIAL
+.testimonial{
+    text-align: center;
+    padding-top: 90px;
+    h1{
+        font-weight: bold;
+    }
+    .center{
+        width: 80%;
+        margin: 0 auto;
+        text-align: left;
+        border: 1px solid;
+        border-radius: 20px;
+        padding: 20px;
+        p{
+            padding: 20px 0;
+        }
+        .main{
+            width: 250px;
+            height: 117px;
+            background-color: #599ee9;
+            .left{
+                float: left;
+            }
+            .right{
+                float: left;
+                padding: 15px;
+                text-align: center;
+                h1{
+                    font-size: 18px;
+                    padding: 5px;
+                    color: white;
+                }
+                p{
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    .btn{
+        margin: 30px;
+    }
+}
+
+// email
+.email{
+    background-color: #f2f7fd;
+    .row{
+        padding: 90px 0;
+    }
+    .content{
+        div{
+            border-bottom: 1px solid;
+            padding: 10px 0;
+            margin-top: 40px;
+            input{
+                width: 100%;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                font-size: 20px;
+            }
+        }
+    }
+    .btn{
+        background-color: red;
+        margin-top: 50px;
+    }
+}
+
+// footer
+.footer{
+    background-color: #292828;
+    .row:nth-child(1){
+        padding: 20px 0;
+        border-bottom: 1px solid white;
+    }
+    .bottom-text{
+        padding-right: 10px;
+        h2{
+            color: white;
+        }
+        p{
+            color: white;
+            // padding: 15px;
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li{
+                color: white;
+                cursor: pointer;
+                &:hover{
+                    color: #599ee9;
+                }
+            }
+        }
+        input{
+            border: none;
+            outline: none;
+            padding: 12px;
+        }
+    }
+    .btn{
+        margin: 10px 0;
+        text-align: center;
+        border-radius: 0;
+        margin-top: 7px;
+    }
+    .bottom-img{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        li{
+            padding:15px;
+        }
+    }
+}

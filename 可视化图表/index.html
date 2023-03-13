@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/echarts.min.js"></script>
+</head>
+<!-- style="overflow:hidden;" -->
+
+<body>
+    <div class="main">
+        <div class="main-left">
+            <div class="page" style="width: 350px;height: 250px;"></div>
+            <div class="area" style="width: 350px;height: 250px;"></div>
+            <div class="call" style="width: 350px;height: 250px;"></div>
+        </div>
+        <div class="main-mide">
+            <div class="total" style="width:900px;height: 200px;"></div>
+            <div class="monthly" style="width:900px;height:320px"></div>
+            <div class="secon-page" style="width:900px;height:250px"></div>
+        </div>
+        <div class="main-right">
+            <div class="call-dfd" style="width: 350px;height: 250px;"></div>
+            <div class="age-data" style="width: 350px;height: 250px;">
+                <h1>年龄数据</h1>
+                <div class="data active">
+                    <table border="1" celllspacin="0">
+                        <tr>
+                            <th style="width:150px">年龄</th>
+                            <th style="width:200px">浏览量</th>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>515</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>656</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>873</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>994</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>4294</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>4248</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>536</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>536</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>536</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="user-sex" style="width: 350px;height: 250px;"></div>
+        </div>
+    </div>
+
+    <!-- 
+    <script>
+        function init() {
+            var width = document.documentElement.clientWidth;
+            document.documentElement.style.fontSize = width / width + "px";
+            // console.log(document.documentElement.style.fontSize);
+        }
+        init();
+        window.addEventListener("resize", init);
+    </script> -->
+
+    <script>
+        var myPage = echarts.init(document.querySelector(".page"));
+        var myArea = echarts.init(document.querySelector(".area"));
+        var myCall = echarts.init(document.querySelector(".call"));
+        var myCallDfd = echarts.init(document.querySelector(".call-dfd"));
+        var myUserSex = echarts.init(document.querySelector(".user-sex"));
+        var myTotal = echarts.init(document.querySelector(".total"));
+        var myMonthly = echarts.init(document.querySelector(".monthly"));
+        var mySeconPage = echarts.init(document.querySelector(".secon-page"));
+
+        // 左边图表数据
+        // 一级渠道浏览量
+        var page = {
+            color: ['#facd59', '#03beca', '#f77979'],
+            title: {
+                text: '一级渠道浏览量',
+                textStyle: {
+                    color: ['#056da3']
+                }
+            },
+            tooltip: {},
+            legend: {},
+            grid: {
+                left: '20%'
+            },
+            xAxis: {
+                show: false,
+                // 清除背景网格线
+                splitLine: {
+                    show: false
+                },
+
+            },
+            yAxis: {
+                data: ['新媒体营销', '线上渠道', '线下渠道'],
+                axisLabel: {
+                    color: 'white'
+                },
+                // 清除背景网格线
+                splitLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+            },
+            series: [
+                {
+                    type: 'bar',
+                    label: {
+                        show: true,
+                        position: 'right',
+                        fontSize: 8,
+                        color: 'white'
+                    },
+                    data: [0.22, 0.09, 0.15],
+                    barWidth: '25%',
+                },
+                {
+                    type: 'bar',
+                    label: {
+                        show: true,
+                        position: 'right',
+                        fontSize: 8,
+                        color: 'white'
+                    },
+                    data: [0.57, 0.18, 0.09],
+                    barWidth: '25%'
+                },
+                {
+                    type: 'bar',
+                    label: {
+                        show: true,
+                        position: 'right',
+                        fontSize: 8,
+                        color: 'white'
+                    },
+                    data: [0.72, 0.21, 0.22],
+                    barWidth: '25%',
+                    barGap: 0.1
+                },
+
+            ]
+        };
+
+        // 地区数据统计
+        var area = {
+            // color:['#4d77d3'],
+            title: {
+                text: '地区数据统计',
+                textStyle: {
+                    color: '#056da3'
+                }
+            },
+            tooltip: {
+            },
+            legend: {
+                left: "10%"
+            },
+            xAxis: {
+                data: ["潮州市", "成都市", "东莞市", "揭阳市", "莱芜市", "清远市", "阳江市", "中山市", "周口市"],
+                axisLabel: {
+                    color: 'white'
+                },
+                // 清除背景网格线
+
+                splitLine: { show: false }
+
+            },
+            yAxis: {
+                show: false,
+                // 清除背景网格线
+                splitLine: { show: false }
+            },
+            series: [
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    data: [35, 40, 45, 35, 25, 30, 33, 35, 40, 30],
+                    itemStyle: {
+                        normal: {
+                            color: '#4d77d2'
+                        }
+                    }
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    data: [35, 40, 45, 35, 25, 30, 33, 35, 40, 30],
+                    itemStyle: {
+                        normal: {
+                            color: '#43a6bb'
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    data: [50, 51, 50, 54, 30, 40, 44, 50, 36],
+                    itemStyle: {
+                        normal: {
+                            color: '#87fe95'
+                        }
+                    }
+                },
+            ]
+        };
+
+        // 各访问阶段浏览量
+        var call = {
+            title: {
+                text: '各访问阶段浏览时间',
+                textStyle: {
+                    color: ['#056da3']
+                }
+            },
+            tooltip: {
+
+            },
+            legend: {
+                orient: 'vertical',
+                bottom: '10%',
+                left: 'right',
+                textStyle: {
+                    color: 'white'
+                }
+            },
+            series: [
+                {
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    center: ['35%', '60%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: 16,
+                            fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        {
+                            value: 3, name: '付款', itemStyle: {
+                                color: '#42f2fa'
+                            },
+
+                        },
+                        {
+                            value: 3, name: '交易成功', itemStyle: {
+                                color: '#3bd6f9'
+                            }
+                        },
+                        {
+                            value: 4, name: '浏览商品', itemStyle: {
+                                color: '#86fe94'
+                            }
+                        },
+                        {
+                            value: 3, name: '搜索', itemStyle: {
+                                color: '#1599ea'
+                            }
+                        },
+                        {
+                            value: 3, name: '添加购物车', itemStyle: {
+                                color: '#039bf5'
+                            }
+                        },
+                        {
+                            value: 3, name: '下单', itemStyle: {
+                                color: '#01c8cc'
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+
+
+        var Total = {
+            title: {
+                text: '总浏览量',
+                text: '公司综合运营驾驶舱',
+                x: 'center',
+                y: 'top',
+                textStyle: {
+                    color: 'white',
+                    fontSize: 35
+                },
+            },
+            // series: [
+            //     {
+            //         type: 'gauge',
+            //         pointer:{
+            //             show:false
+            //         },
+
+            //         progress: {
+            //             show: true,
+            //             width: 18
+            //         },
+            //         axisLine: {
+            //             lineStyle: {
+            //                 width: 18
+            //             }
+            //         },
+            //         axisTick: {
+            //             show: false
+            //         },
+            //         splitLine: {
+            //             show:false
+            //         },
+            //         axisLabel: {
+            //             show:false
+            //         },
+            //         anchor: {
+            //             show: true,
+            //             showAbove: true,
+            //             size: 25,
+            //             itemStyle: {
+            //                 borderWidth: 10
+            //             }
+            //         },
+            //         title: {
+            //             show: false
+            //         },
+            //         detail: {
+            //             valueAnimation: true,
+            //             fontSize: 20,
+            //             offsetCenter: [0, '20%']
+            //         },
+            //         data: [
+            //             {
+            //                 value: 90
+            //             }
+            //         ]
+            //     }
+            // ]
+        };
+        var Monthly = {
+            title: {
+                text: '月度访问趋势',
+                textStyle: {
+                    color: ['#056da3']
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                }
+            },
+            legend: {
+                bottom: 'bottom',
+                textStyle: {
+                    color: 'white'
+                }
+            },
+            toolbox: {
+            },
+            grid: {
+                left: '1%',
+                right: '1%',
+                bottom: '15%',
+            },
+            xAxis: [
+                {
+                    boundaryGap: false,
+                    data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+                    axisLabel: {
+                        color: 'white'
+                    },
+                },
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    show: false,
+                }
+            ],
+            series: [
+                {
+                    name: '跳出次数',
+                    type: 'line',
+                    stack: 'Total',
+                    smooth: true,
+                    areaStyle: {
+                        color: '#92b981'
+                    },
+                    lineStyle: {
+                        color: '#92b981'
+                    },
+                    data: [600, 900, 750, 880, 100, 750, 820, 850, 810, 1400, 800, 900]
+                },
+                {
+                    name: '访问次数',
+                    type: 'line',
+                    stack: 'Total',
+                    smooth: true,
+
+                    areaStyle: {
+                        color: '#05b3c4',
+                    },
+                    lineStyle: {
+                        color: '#05b3c4',
+                    },
+
+                    data: [550, 1100, 720, 830, 100, 730, 800, 830, 810, 2000, 780, 1000]
+                }
+
+            ]
+
+        };
+        var SeconPage = {
+            color: ['#3bebf2', '#3ad0f9', '#78fc84'],
+
+            title: {
+                text: '二级渠道浏览量分布',
+                textStyle: {
+                    color: ['#056da3']
+                }
+            },
+            legend: {
+                bottom: 'bottom',
+                textStyle: {
+                    color: 'white'
+                }
+            },
+            tooltip: {},
+            dataset: {
+                source: [
+                    ['基础上线工作', 70.3, 135.8, 153.7],
+                    ['轮台、贴吧推广', 70.1, 113.4, 153.1],
+                    ['品牌基础推广', 40.4, 90.2, 120.5],
+                    ['事件营销', 30.4, 53.9, 60.1],
+                    ['手机厂商预装', 30.3, 35.8, 60.7],
+                    ['水货刷机', 30.3, 35.8, 60.7],
+                    ['微博推广', 25.4, 50.2, 82.5],
+                    ['微信推广', 30.4, 100.9, 130.1],
+                    ['行货店面', 15.3, 25.8, 35.7],
+                ],
+            },
+            grid: {
+                left: '1%',
+                right: '1%',
+                top: '5%',
+                bottom: '25%'
+            },
+            xAxis: {
+                type: 'category',
+                axisLabel: {
+                    color: 'white',
+                    interval: 0
+                },
+
+            },
+            yAxis: {
+                show: false,
+                // 清除背景网格线
+                splitLine: { show: false }
+            },
+            series: [
+                { name: 'VIP用户', type: 'bar', barWidth: '18%' },
+                { name: '老用户', type: 'bar', barWidth: '18%' },
+                { name: '新用户', type: 'bar', barWidth: '18%' },
+            ],
+        };
+
+        // 右边图表数据
+        // 访问平台浏览量分布
+        var callDfd = {
+            color: ['#43f3fb', '#3acff9', '#81fd8e', '#01c8cc', '#0474a8', '#fb6f93', '#e03f6a', '#f8b39f', '#ffe146', '#f7952d'],
+            title: {
+                text: '访问平台浏览量分布',
+                textStyle: {
+                    color: ['#056da3']
+                }
+            },
+            tooltip: {
+
+            },
+            legend: {},
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                show: false,
+                // 清除背景网格线
+                splitLine: {
+                    show: false
+                },
+            },
+            yAxis: {
+                type: 'category',
+                data: ['', '', ''],
+
+                // 清除背景网格线
+                splitLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: { show: false }
+
+            },
+            series: [
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [320, 302, 301]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [220, 132, 10]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    data: [220, 182, 191]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [350, 212, 201]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    data: [220, 182, 191]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [150, 212, 201]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    data: [220, 582, 191]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [150, 212, 201]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    data: [220, 282, 191]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [150, 212, 201]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    data: [220, 382, 191]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [150, 212, 201]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    data: [220, 782, 291]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [150, 212, 201]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    data: [220, 182, 301]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [150, 212, 201]
+                },
+                {
+                    type: 'bar',
+                    stack: 'total',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    data: [1, 432, 200]
+                }
+            ]
+        }
+
+        // 用户分析
+        var userSex = {
+            title: {
+                text: '用户分析',
+                textStyle: {
+                    color: ['#056da3']
+                }
+            },
+            tooltip: {
+
+            },
+            legend: {
+                bottom: 0,
+                textStyle: {
+                    color: 'white'
+                }
+            },
+            series: [
+                {
+                    type: 'pie',
+                    radius: ['25%', '40%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: 20,
+                            fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        {
+                            value: 1, name: "男", itemStyle: {
+                                color: '#4d77d3'
+                            }
+                        },
+                        {
+                            value: 3, name: "女", itemStyle: {
+                                color: '#47b1c6'
+                            }
+                        },
+
+                        {
+                            value: 3, itemStyle: {
+                                color: '#b7e791'
+                            }
+                        }
+                    ]
+                },
+                {
+                    type: 'pie',
+                    radius: ['55%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: 20,
+                            fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        {
+                            value: 1.2, name: '男', itemStyle: {
+                                color: '#4d77d3'
+                            }
+                        },
+                        {
+                            value: 1, name: '女', itemStyle: {
+                                color: '#47b1c6'
+                            }
+                        },
+
+                    ]
+                }
+            ]
+        }
+
+        myPage.setOption(page);
+        myArea.setOption(area);
+        myCall.setOption(call);
+
+        myTotal.setOption(Total);
+        myMonthly.setOption(Monthly);
+        mySeconPage.setOption(SeconPage);
+
+        myCallDfd.setOption(callDfd);
+        myUserSex.setOption(userSex);
+
+    </script>
+</body>
+
+</html>

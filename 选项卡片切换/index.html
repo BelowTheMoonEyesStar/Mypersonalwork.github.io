@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="tabs">
+        <div class="tab tab-frist current">
+            <div class="nav active">
+                <span class="bar"></span>
+            </div>
+            <div class="content show">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+            </div>
+        </div>
+        <div class="tab tab-mide">
+            <div class="nav">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="content">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+            </div>
+        </div>
+        <div class="tab tab-last">
+            <div class="nav">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="content">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        // 鼠标点击切换内容 并添加高亮
+        $(".nav").click(function(){
+
+            $(".nav").removeClass("active");
+            $(".tab").removeClass("prev");
+            $(".tab").removeClass("current");
+
+            $(this).addClass("active");
+            $(this).parent(".tab").addClass("current");
+        });
+    </script>
+</body>
+
+</html>

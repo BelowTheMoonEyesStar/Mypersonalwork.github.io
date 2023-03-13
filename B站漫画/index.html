@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <section class="all-label"></section>
+        <ul class="list"></ul>
+    </div>
+
+    <script>
+        // 请求目标参数
+        var query = {
+            styleId: -1,
+            areaId: -1,
+            isFinish: -1,
+            order: 0,
+            pageNum: 1,
+            pageSize: 39,
+            isFree: -1,
+        };
+        // 封装一个插入列表数据函数
+        function labelList(name, list, key, value) {
+            // console.log(name,list,key,value);
+            // 创建新的ul标签
+            var $newUl = $("<ul></ul>");
+            // 在ul标签中添加属性
+            $newUl.append($("<li class='title'>" + name + "</li>"));
+            $newUl.append($("<li class='active' data-id=" + value + "data-key" + key + ">全部</li>"));
+            // 遍历数据,添加到ul中
+            list.forEach(function (ele, index) {
+                $newUl.append($("<li data-id=" + ele.id + " data-key=" + key + ">" + ele.name + "</li>"));
+            });
+            // 添加到页面中
+            $("section.all-label").append($newUl);
+        }
+        // ajax获取分类列表
+        $.get("https://apis.netstart.cn/bcomic/AllLabel", query, function (res) {
+            // console.log(res.data);
+            labelList("题材", res.data.styles, "styleId", -1);
+            labelList("地区", res.data.areas, "areasId", -1);
+            labelList("进度", res.data.status, "isFinish", -1);
+            labelList("收费", res.data.prices, "isFree", -1);
+            labelList("排序", res.data.orders, "order", 0);
+
+            // 给生成的li添加点击事件
+            $(".all-label ul li").click(function () {
+                // 当前点击改变请求参数
+                query[$(this).data("key")] = $(this).data("id");
+
+                // $(this)自己添加高亮 兄弟取消高亮
+                $(this).addClass("active").siblings().removeClass("active");
+
+                // 清除上一次的列表内容
+                $(".list").html("");
+
+                // 调用渲染内容漫画列表的函数
+                mainList();
+            });
+
+            // 封装一个漫画列表内容渲染数据的函数
+            function mainList() {
+                // ajax获取图片列表
+                $.get("https://apis.netstart.cn/bcomic/ClassPage", query, function (res) {
+                    console.log(res.data);
+                    var str = ''
+                    res.data.forEach(function (ele) {
+                        // 判断是否完结
+                        if (ele.is_finish === 1) {
+                            str = "[完结] 共 "
+                        } else {
+                            str = "更新至 "
+                        }
+                        // 渲染数据
+                        $(".list").append("<li><img src='" + ele.vertical_cover + "'><p>" + ele.title + "</p><span>" + str + ele.last_ord + "话" + "</span></li>");
+                    });
+                });
+            }
+            // 默认页面加载后调用内容渲染数据的函数
+            mainList();
+        });
+    </script>
+</body>
+</html>

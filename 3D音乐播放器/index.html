@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <audio loop="loop">
+        <source src="./audio/红颜如霜.mp3">
+    </audio>
+
+    <div class="card">
+        <div class="top">
+            <div class="left">
+                <i class="iconfont">&#xe6a9</i>
+            </div>
+            <div class="t-mid">
+                <h2>My3DPlayer</h2>
+            </div>
+            <div class="right">
+                <i class="iconfont">&#xe63c</i>
+            </div>
+        </div>
+        <div class="mid">
+            <div class="btnLeft">
+                <i class="iconfont">&#xe6cf</i>
+            </div>
+            <div class="btnMid">
+                <p>
+                    <i class="iconfont">&#xe644</i>
+                    <span>红颜如霜</span>
+                </p>
+            </div>
+            <div class="btnRight">
+                <i class="iconfont">&#xe61c</i>
+            </div>
+
+            <div class="inner">
+                <div class="inner-mid">
+                    <img src="./images/111.jpg">
+                    <h1>Koan Sound - Meanwhile in the future</h1>
+                    <h3>周杰伦</h3>
+                    <div class="bars">
+                        <div class="bars-bar"></div>
+                        <div class="bars-bar"></div>
+                        <div class="bars-bar"></div>
+                        <div class="bars-bar"></div>
+                        <div class="bars-bar"></div>
+                        <div class="bars-bar"></div>
+                        <div class="bars-bar"></div>
+                        <div class="bars-bar"></div>
+                        <div class="bars-bar"></div>
+                        <div class="bars-bar"></div>
+                    </div>
+                </div>
+                <div class="inner-left">
+                    <i class="iconfont">&#xe63a</i>
+                    <i class="iconfont">&#xe637</i>
+                    <i class="iconfont">&#xe627</i>
+                    <i class="iconfont">&#xe644</i>
+                </div>
+                <div class="inner-right">
+                    <div class="volume">
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                        <div class="volume-pip"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bottom">
+            <div class="options">
+                <div class="options-left">
+                    <i class="iconfont">&#xf015c</i>
+                </div>
+                <div class="options-right">
+                    <i class="iconfont">&#xe637</i>
+                </div>
+            </div>
+
+            <div class="playbar">
+                <input type="range" class="range" value="0">
+            </div>
+
+            <div class="controls">
+                <div class="controls-left">
+                    <i class="iconfont">&#xe727</i>
+                </div>
+                <div class="controls-mid">
+                    <i class="iconfont">&#xe610</i>
+                </div>
+                <div class="controls-right">
+                    <i class="iconfont">&#xe728</i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var objLeftDiv = document.querySelector(".btnLeft");
+        var objRightDiv = document.querySelector(".btnRight");
+        var objinnerLeft = document.querySelector(".inner-left");
+        var objinnerRight = document.querySelector(".inner-right");
+        var objinnerMid = document.querySelector(".inner-mid");
+        var objPlay = document.querySelector(".controls-mid");
+        var objPlayI = document.querySelector(".controls-mid .iconfont")
+
+        var objAudio = document.getElementsByTagName("audio")[0];
+        var objRange = document.querySelector(".range");
+
+        // 获取音频时长
+        objAudio.ondurationchange = function(){
+            // 进度条与音频时长绑定
+            objRange.max = this.duration;
+        }
+        // 获取音频播放的进度 位置
+        objAudio.ontimeupdate = function(){
+            // 位置与进度条绑定
+            objRange.value = objAudio.currentTime;
+        }
+        // 设置进度条的拖拽
+        objRange.onchange = function(e){
+            objAudio.currentTime = e.target.value;
+        }
+        // 按钮点击播放切换状态
+        objPlay.onclick = function(){
+            this.removeChild(this.children[0]);
+            if(objAudio.paused){
+                // 播放
+                objAudio.play();
+                this.innerHTML = '<i class="iconfont">&#xe643</i>';
+            }else{
+                // 暂停
+                this.innerHTML = '<i class="iconfont">&#xe610</i>';
+                objAudio.pause();
+            }
+        }
+
+        
+        objLeftDiv.onclick = function () {
+            this.style.left = -60 + "px";
+            objRightDiv.style.right = 0 + "px";
+            objinnerLeft.style.transform = "translateX(" + 80 + "px)"
+            objinnerRight.style.transform = "translateX(" + 840 + "px)"
+            objinnerMid.style.transform = "translateX(" + 440 + "px)"
+
+        }
+        objRightDiv.onclick = function () {
+            this.style.right = -60 + "px";
+            objLeftDiv.style.left = 0 + "px";
+            objinnerLeft.style.transform = "translateX(" + -80 + "px)"
+            objinnerRight.style.transform = "translateX(" + 680 + "px)"
+            objinnerMid.style.transform = "translateX(" + 300 + "px)"
+            
+        }
+        objinnerMid.onclick = function () {
+            objRightDiv.style.right = 0 + "px";
+            objLeftDiv.style.left = 0 + "px";
+            objinnerLeft.style.transform = "translateX(" + -80 + "px)"
+            objinnerRight.style.transform = "translateX(" + 840 + "px)"
+            objinnerMid.style.transform = "translateX(" + 380 + "px)"
+
+        }
+    </script>
+</body>
+
+</html>

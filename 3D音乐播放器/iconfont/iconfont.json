@@ -1,0 +1,100 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1277",
+      "name": "刷新",
+      "font_class": "shuaxin",
+      "unicode": "f015c",
+      "unicode_decimal": 983388
+    },
+    {
+      "icon_id": "716048",
+      "name": "音乐",
+      "font_class": "yinle",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "3996609",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "6446251",
+      "name": "耳机",
+      "font_class": "tianchongxing-",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "6651952",
+      "name": "icons_next",
+      "font_class": "icons_next",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "7339838",
+      "name": "选项",
+      "font_class": "xuanxiang",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "8214639",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "9851587",
+      "name": "播放",
+      "font_class": "bofang1",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "11177852",
+      "name": "随机播放",
+      "font_class": "ziyuan",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "12103016",
+      "name": "声音",
+      "font_class": "shengyin",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "13137514",
+      "name": "上一首未点击",
+      "font_class": "shangyishouweidianji",
+      "unicode": "e727",
+      "unicode_decimal": 59175
+    },
+    {
+      "icon_id": "13137518",
+      "name": "下一首未点击",
+      "font_class": "xiayishouweidianji",
+      "unicode": "e728",
+      "unicode_decimal": 59176
+    },
+    {
+      "icon_id": "15686596",
+      "name": "设置1",
+      "font_class": "shezhi1",
+      "unicode": "e6cf",
+      "unicode_decimal": 59087
+    }
+  ]
+}

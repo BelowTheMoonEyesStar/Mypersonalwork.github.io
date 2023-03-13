@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 引入ECharts文件 -->
+    <script src="./js/echarts.min.js"></script>
+    <style>
+        .context {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="context"></div>
+    <script>
+        var option = {
+            // 标题
+            // title: {
+            //     text:'echarts实列'
+            // },
+            // 配置信息
+            // tooltip: {},
+            // 图列组件
+            // legend: {},
+            // legend:{
+            //     data:[{
+            //         name:'系列名',
+            //         // 强制设置为圆形
+            //         icon:'circle',
+            //         // 设置文本颜色
+            //         textStyle:{
+            //             color:'red'
+            //         }
+            //     }]
+            // }
+            // X轴显示的项
+            // xAxis: {
+            //     data: ['111', '222', '333', '444']
+            // },
+            // Y轴显示的项
+            // yAxis: {},
+            series: [{
+                name: 'echarts图形',//系列名
+                type: 'pie',//系列图表类型
+                radius: '105px',//圆的半径
+                data: [
+                    //系列中的数据内容
+                    { value: 235, name: '视频广告' },
+                    { value: 235, name: '联盟广告' },
+                    { value: 235, name: '邮箱营销' },
+                    { value: 235, name: '直接访问' },
+                    { value: 235, name: '搜索引擎' }
+                ],
+                roseType:'angle',
+                // 设置透明度
+                itemStyle:{
+                    normal:{
+                        shadowBlur:100,
+                        shadowColor:'skyblue'
+                    }
+                }
+            }]
+        }
+        // 图表绘制页面容器中
+        echarts.init(document.querySelector(".context")).setOption(option);
+
+    </script>
+</body>
+
+</html>
