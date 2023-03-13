@@ -1,0 +1,93 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: url(images/bg.jpg) no-repeat;
+  background-color: #888;
+  background-size: cover;
+  background-position: 50% 50%;
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+}
+.content {
+  transform-style: preserve-3d;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  transform: rotateX(180deg) rotateY(0deg);
+  animation: myCube 10s linear;
+  animation-iteration-count: infinite;
+}
+.content * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.content img {
+  width: 100%;
+}
+.content .box1 {
+  background-color: #65b3d1;
+  transform: rotateX(90deg) translateZ(200px);
+}
+.content .box2 {
+  background-color: rgba(10, 31, 39, 0.7);
+  transform: rotateX(90deg) translateZ(-200px);
+}
+.content .box3 {
+  background-color: rgba(20, 32, 37, 0.7);
+  transform: rotateY(90deg) translateZ(200px);
+}
+.content .box4 {
+  background-color: rgba(25, 12, 141, 0.7);
+  transform: rotateY(-90deg) translateZ(200px);
+}
+.content .box5 {
+  background-color: rgba(143, 13, 56, 0.7);
+  transform: rotateX(180deg) translateZ(200px);
+}
+.content .box6 {
+  background-color: rgba(9, 158, 108, 0.7);
+  transform: rotateX(180deg) translateZ(-200px);
+}
+@keyframes myCube {
+  0% {
+    transform: rotateX(180deg) rotateY(0deg);
+  }
+  10% {
+    transform: rotateX(252deg) rotateY(72deg);
+  }
+  20% {
+    transform: rotateX(324deg) rotateY(144deg);
+  }
+  30% {
+    transform: rotateX(-36deg) rotateY(216deg);
+  }
+  40% {
+    transform: rotateX(-108deg) rotateY(288deg);
+  }
+  50% {
+    transform: rotateX(-180deg) rotateY(360deg);
+  }
+  60% {
+    transform: rotateX(-252deg) rotateY(-72deg);
+  }
+  70% {
+    transform: rotateX(-360deg) rotateY(-144deg);
+  }
+  80% {
+    transform: rotateX(-324deg) rotateY(-216deg);
+  }
+  90% {
+    transform: rotateX(36) rotateY(-288deg);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(0deg);
+  }
+}
+/*# sourceMappingURL=./style.css.map */
